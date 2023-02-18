@@ -1,14 +1,16 @@
 package d1;
 import java.util.*;
-public class d17 {
+public class Q11_12 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
+		System.out.println("enter no of rows");
 		int a[][]=new int[sc.nextInt()][];
 		int e=1;
 		int r=a.length;
 		for(int i=0;i<r;i++) {
+			System.out.println("enter no of cols");
 			int c=sc.nextInt();
 			a[i]=new int[c];
 			for(int j=0;j<c;j++) {

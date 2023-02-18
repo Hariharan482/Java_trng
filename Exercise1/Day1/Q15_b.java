@@ -1,10 +1,10 @@
 package d1;
 import java.util.*;
-public class p111 {
+public class Q15_b {
 	public static void main(String[] args) {
 	Scanner sc=new Scanner(System.in);
 	int x=sc.nextInt();
-	check c=new check();
+	Check c=new Check();
 	if(c.isArmstrong(x)) {
 		System.out.println("armstrong no");
 	}
@@ -20,7 +20,7 @@ public class p111 {
 	}
 }
 
-class check{
+class Check{
 	static boolean isArmstrong(int n)   
 	{   
 	int temp, digits=0, last=0, sum=0;   
@@ -40,7 +40,7 @@ class check{
 	}  
 	if(n==sum)     
 	return true;      
-	else return false;   
+	return false;   
 	}   
 	
 	

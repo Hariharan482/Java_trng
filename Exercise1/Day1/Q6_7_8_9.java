@@ -1,6 +1,6 @@
 package d1;
 import java.util.*;
-public class d15 {
+public class Q6_7_8_9 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -8,11 +8,14 @@ public class d15 {
 		
 		int a[]= {14,2,33,12};
 		Scanner sc=new Scanner(System.in);
+		// array resizing
 		System.out.println("enter new sizw:");
 		int x=sc.nextInt();
 		a=Arrays.copyOf(a,x);
-		System.out.println(Arrays.toString(a));			
+		System.out.println(Arrays.toString(a));
+		
 		ar.reverse(a);
+		
 		System.out.println("enter the element to be found:");
 		int ser=sc.nextInt();
 		if(ar.search(a, ser)) {
@@ -20,6 +23,7 @@ public class d15 {
 		}
 		else
 			System.out.println("not found");
+		
 		ar.ascending(a);
 		ar.descending(a);		
 		
@@ -60,7 +64,7 @@ class Array{
 	
 	public boolean search(int b[], int ser) {
 		//int c=0;
-		int flag=0;
+		//int flag=0;
 		for(int i=0;i<b.length;i++) {
 			if(b[i]==ser) {
 				System.out.println("index:"+i);

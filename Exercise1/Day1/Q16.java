@@ -1,12 +1,13 @@
 package d1;
 import java.util.*;
-public class p112 {
+public class Q16 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int ar[]= {1,2,2,2,2,3,4};
-		loc a=new loc();
+		Loc a=new Loc();
 		Scanner sc=new Scanner(System.in);
+		System.out.println("num to be searched");
 		int x=sc.nextInt();
 		if(a.search(ar,x)) {
 			System.out.println("found");
@@ -16,7 +17,7 @@ public class p112 {
 
 }
 
-class loc{
+class Loc{
 	static int c=0;
 	public boolean search(int b[], int ser) {
 		//int c=0;

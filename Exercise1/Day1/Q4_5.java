@@ -1,6 +1,6 @@
 package d1;
 import java.util.*;
-public class d14 {
+public class Q4_5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,6 +11,7 @@ public class d14 {
 		}
 		else 
 			System.out.println("not a prime");
+		
 		avg av=new avg();
 		av.aver(5);
 	}

@@ -7,7 +7,7 @@ package d1;
   if access modifier of main fun() changed : error: invalid method declaration; return type required
  * 
  */
-public class d19 {
+public class Q14{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

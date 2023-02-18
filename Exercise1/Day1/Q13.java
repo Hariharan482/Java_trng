@@ -1,6 +1,6 @@
 package d1;
 import java.util.*;
-public class d18 {
+public class Q13 {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter no of std");
@@ -10,6 +10,7 @@ public class d18 {
 		for(int i=0;i<stud.length;i++) {
 			int tt=0;
 			for(int j=0;j<5;j++) {
+				System.out.println("enter the marks");
 				stud[i][j]=sc.nextInt();
 				tt+=stud[i][j];
 			}

@@ -1,6 +1,6 @@
 package d1;
 
-public class p113 {
+public class Q17 {
 	static int x=10;
 	public static void main(String[] args) {
 		final int i=5;

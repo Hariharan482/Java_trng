@@ -1,6 +1,6 @@
 package d1;
 
-public class d11 {
+public class Q1_2_3 {
 	static int x;
 	static float y;
 	public static void main(String[] args) {
