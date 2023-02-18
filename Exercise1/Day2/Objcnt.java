@@ -1,6 +1,6 @@
 package d2;
 
-public class d25 {
+public class Objcnt {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

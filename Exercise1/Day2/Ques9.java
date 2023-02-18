@@ -1,6 +1,6 @@
 package d2;
 
-public class d29 {
+public class Ques9 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
