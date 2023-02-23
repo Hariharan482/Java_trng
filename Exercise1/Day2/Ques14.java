@@ -4,7 +4,7 @@ public class Ques14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Res r=new Res();
+		Result r=new Result();
 		r.setMarks(67, 77, 56);
 		System.out.println(r.calc());
 	}
@@ -13,7 +13,7 @@ public class Ques14 {
 
 class Student{
 	String name;
-	int rno;
+	int rollno;
 	
 }
 class Exam extends Student{
@@ -25,10 +25,10 @@ class Exam extends Student{
 	}
 }
 
-class Res extends Exam{
-	int tot=0;
+class Result extends Exam{
+	int total=0;
 	int calc() {
-		tot=mat+phy+chem;
-		return tot;
+		total=mat+phy+chem;
+		return total;
 	}
 }

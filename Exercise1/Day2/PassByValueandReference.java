@@ -2,7 +2,7 @@ package d2;
 
 import java.util.Arrays;
 
-public class Pbvr {
+public class PassByValueandReference {
 	public static void main(String[] args) {
 		Primitive p=new Primitive();
 		int x=10;

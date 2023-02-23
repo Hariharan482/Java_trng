@@ -7,13 +7,13 @@ public class Q25_26 {
 		int i=-243;
 		int j=243;
 		//if(i==j);
-		if(i==j)
+		if(i!=j)
 			System.out.println("same");
 	}
 
 }
 
-//protected// 
+//protected 
 class Base{
 	String method() {
 		return "wow";
