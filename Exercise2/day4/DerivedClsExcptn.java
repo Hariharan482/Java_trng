@@ -2,7 +2,7 @@ package day4;
 
 import java.util.Scanner;
 
-public class DervdClsExcp {
+public class DerivedClsExcptn {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub

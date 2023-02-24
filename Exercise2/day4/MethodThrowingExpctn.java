@@ -2,7 +2,7 @@ package day4;
 
 import java.util.Scanner;
 
-public class MethThrowExp {
+public class MethodThrowingExpctn {
 	
 	public static void main(String[] args) throws MyExcep {
 		// TODO Auto-generated method stub

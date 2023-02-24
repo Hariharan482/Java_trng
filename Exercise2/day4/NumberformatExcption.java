@@ -2,7 +2,7 @@ package day4;
 
 import java.util.*;
 
-public class NumforExcp {
+public class NumberformatExcption {
 
 	public static void main(String[] args) throws Out_of_range{
 		// TODO Auto-generated method stub
