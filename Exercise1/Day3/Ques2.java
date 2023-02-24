@@ -15,7 +15,7 @@ public class Ques2 {
 
 interface calcArea{
 	void area();
-	void perm();
+	void perimeter();
 }
 interface calcVolume{
 	void vol();
@@ -28,7 +28,7 @@ class Circle implements calcArea{
 		this.r=r;
 		System.out.println("***Circle***");
 		area();
-		perm();
+		perimeter();
 	}
 	public void area(){
 		System.out.printf("Area: %.2f\n",Math.PI*r*r);
@@ -52,7 +52,7 @@ class Triangle implements calcArea{
 		double s=(a+b+c)/2;
 		System.out.printf("Area : %.2f\n",Math.sqrt((s*(s-a)*(s-b)*(s-c))));
 	}
-	public void perm(){
+	public void perimeter(){
 		System.out.println("Perimeter:"+(a+b+c));
 	}
 }
@@ -70,7 +70,7 @@ class Square implements calcArea{
 	public void area(){
 		System.out.println("Area:"+r*r);
 	}
-	public void perm(){
+	public void perimeter(){
 		System.out.println("Perimeter"+4*r);
 	}
 }
@@ -91,7 +91,7 @@ class Sphere implements calcArea,calcVolume{
 	public void vol(){
 		System.out.printf("%.2f\n",(4/3)*Math.PI*r*r*r);
 	}
-	public void perm(){
+	public void perimeter(){
 		System.out.printf("%.2f\n",2*Math.PI*r);
 	}
 	public void sarea() {
@@ -119,7 +119,7 @@ class Cuboid implements calcArea,calcVolume{
 	public void vol(){
 		System.out.printf("%.2f\n",r*r*r);
 	}
-	public void perm(){
+	public void perimeter(){
 		System.out.printf("%.2f\n",4*r);
 	}
 	public void sarea() {
