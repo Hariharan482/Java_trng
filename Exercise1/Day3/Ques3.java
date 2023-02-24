@@ -17,14 +17,58 @@ public class Ques3 {
 		
 		DynamicStack ds=new DynamicStack();
 		System.out.println("Dynamic Stack :");
-		ds.push(0);
-		ds.push(1);
-		ds.push(2);
 		ds.push(3);
-		ds.push(4);
-		ds.push(5);
-		ds.pop();
-		ds.pop();
+		//ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+//		ds.push(0);
+//		ds.push(1);
+//		ds.push(2);
+//		ds.push(3);
+//		ds.push(4);
+//		ds.push(5);
+		
+		ds.print();
+		//ds.pop();
+		//ds.pop();
 	}
 
 }
@@ -63,7 +107,7 @@ class FixedStack implements Stack{
 }
 
 class DynamicStack implements Stack{
-	int da[]=new int[4];
+	int da[]=new int[1];
 	int top=-1;
 	@Override
 	public void pop() {
@@ -78,7 +122,12 @@ class DynamicStack implements Stack{
 
 		
 	}
-
+	public void print() {
+		System.out.println(da.length);
+		for(int i=0;i<da.length;i++) {
+			System.out.print(da[i]+" ");
+		}
+	}
 	@Override
 	public void push(int n) {
 		// TODO Auto-generated method stub
@@ -88,7 +137,7 @@ class DynamicStack implements Stack{
 
 	}
 	void resize(int len) {
-		da=Arrays.copyOf(da, len*2);
+		da=Arrays.copyOf(da, len+1);
 	}
 	
 }

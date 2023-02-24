@@ -1,9 +1,9 @@
 package day4;
 
 
-public class Out_of_range extends Exception{
+public class OutOfRange extends Exception{
 	String msg;
-	public Out_of_range(String msg) {
+	public OutOfRange(String msg) {
 		// TODO Auto-generated constructor stub
 		this.msg=msg;
 	}

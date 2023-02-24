@@ -26,7 +26,7 @@ class Dervd extends Base{
 			//super();
 			}
 		catch(Exception e) {
-			e.printStackTrace();
+			System.out.println("hi");
 		}
 		// TODO Auto-generated constructor stub
 		

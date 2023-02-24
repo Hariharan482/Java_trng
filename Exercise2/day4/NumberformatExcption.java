@@ -4,7 +4,7 @@ import java.util.*;
 
 public class NumberformatExcption {
 
-	public static void main(String[] args) throws Out_of_range{
+	public static void main(String[] args) throws OutOfRange{
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
@@ -29,14 +29,14 @@ public class NumberformatExcption {
 						mark[i][j] = mrk;
 						total+= mrk;}
 						else {
-							throw new Out_of_range("out of range");
+							throw new OutOfRange("out of range");
 						}
 					} catch (NumberFormatException e) {
 						System.out.println("enter a valid number");
 						sc.reset();
 						j--;
 					}
-					catch(Out_of_range e) {
+					catch(OutOfRange e) {
 						System.out.println(e);
 						j--;
 					}

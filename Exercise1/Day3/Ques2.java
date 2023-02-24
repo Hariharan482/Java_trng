@@ -5,6 +5,7 @@ public class Ques2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Sphere s=new Sphere(2);
+		//s.area();
 		Triangle t=new Triangle(2,3,5);
 		Circle c=new Circle(5);
 		
@@ -30,10 +31,10 @@ class Circle implements calcArea{
 		perm();
 	}
 	public void area(){
-		System.out.println("Area:"+Math.PI*r*r);
+		System.out.printf("Area: %.2f\n",Math.PI*r*r);
 	}
 	public void perm(){
-		System.out.println("Perimeter:"+2*Math.PI*r);
+		System.out.printf("Perimeter: %.2f\n",2*Math.PI*r);
 	}
 }
 
@@ -49,7 +50,7 @@ class Triangle implements calcArea{
 	}
 	public void area(){
 		double s=(a+b+c)/2;
-		System.out.println("Area:"+Math.sqrt((s*(s-a)*(s-b)*(s-c))));
+		System.out.printf("Area : %.2f\n",Math.sqrt((s*(s-a)*(s-b)*(s-c))));
 	}
 	public void perm(){
 		System.out.println("Perimeter:"+(a+b+c));
@@ -85,16 +86,16 @@ class Sphere implements calcArea,calcVolume{
 		sarea();
 			}
 	public void area(){
-		System.out.println(Math.PI*r*r);
+		System.out.printf("%.2f\n",2*Math.PI*r*r);
 	}
 	public void vol(){
-		System.out.println((4/3)*Math.PI*r*r*r);
+		System.out.printf("%.2f\n",(4/3)*Math.PI*r*r*r);
 	}
 	public void perm(){
-		System.out.println(2*Math.PI*r);
+		System.out.printf("%.2f\n",2*Math.PI*r);
 	}
 	public void sarea() {
-		System.out.println(4*Math.PI*r*r);
+		System.out.printf("%.2f\n",4*Math.PI*r*r);
 	}
 	
 }
@@ -113,15 +114,15 @@ class Cuboid implements calcArea,calcVolume{
 
 	}
 	public void area(){
-		System.out.println(r*r);
+		System.out.printf("%.2f\n",r*r);
 	}
 	public void vol(){
-		System.out.println(r*r*r);
+		System.out.printf("%.2f\n",r*r*r);
 	}
 	public void perm(){
-		System.out.println(4*r);
+		System.out.printf("%.2f\n",4*r);
 	}
 	public void sarea() {
-		System.out.println(6*r*r);
+		System.out.printf("%.2f\n",6*r*r);
 	}
 }

@@ -9,9 +9,9 @@ public class Sample {
 	public void mth2() {
 		// TODO Auto-generated method stub
 		try {
-			int a=1/0;			
-			//return;
-			System.exit(0);
+			//int a=1/0;			
+			return;
+			//System.exit(0);
 
 					}
 		catch(Exception e) {

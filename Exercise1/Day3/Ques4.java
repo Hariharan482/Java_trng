@@ -6,13 +6,15 @@ public class Ques4 {
 		// TODO Auto-generated method stub
 		Cls1 cl1=new Cls1();
 		cl1.Method1(cl1);
+		cl1.Method3(cl1);
 	}
 
 }
 
 class Cls{
-	
+	static int i;
 }
+
 interface A{
 	void methA1();
 	void methA2();
@@ -77,10 +79,11 @@ class Cls1 extends Cls implements ABC{
 		 
 	 }
  public void  Method2(B b) {
+	 System.out.println();
 		 
 	 }
  public void  Method3(C c) {
-	 
+	 System.out.println(i);
  }
  public void  Method4(ABC abc) {
 	 
