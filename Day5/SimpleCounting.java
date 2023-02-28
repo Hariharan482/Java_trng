@@ -7,24 +7,27 @@ public class SimpleCounting {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ExecutorService es=Executors.newFixedThreadPool(1);
-		es.execute(()->{
-			for(int i=1;i<=100;i++) {
+		ExecutorService executorService = Executors.newFixedThreadPool(1);
+		executorService.execute(() -> {
+			for (int i = 1; i <= 100; i++) {
 				System.out.println(i);
-				try {
+				try 
+				{
 					Thread.sleep(1000);
-				} catch (InterruptedException e) {
+				} 
+				catch (InterruptedException e) 
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				if(i%10==0) {
-					System.out.println(i/10+" set of Ten numbers reached");
+				if (i % 10 == 0) 
+				{
+					System.out.println(i / 10 + " set of Ten numbers reached");
 				}
-				
 			}
 		});
-		es.shutdown();
-		
+		executorService.shutdown();
+
 	}
 
 }

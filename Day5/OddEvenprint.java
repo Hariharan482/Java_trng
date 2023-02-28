@@ -3,36 +3,40 @@ package day5;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class OddEvenprint {
+public class OddEvenPrint {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		findevenodd fedo=new findevenodd();
-		ExecutorService es=Executors.newFixedThreadPool(2);
-		es.execute(()->{
-			fedo.even();
+		FindEvenOdd findEvenOdd = new FindEvenOdd();
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
+		executorService.execute(() -> {
+			findEvenOdd.printEven();
 		});
-		es.execute(()->{
-			fedo.odd();
+		executorService.execute(() -> {
+			findEvenOdd.printOdd();
 		});
-		es.shutdown();
+		executorService.shutdown();
 	}
-	
+
 }
 
-class findevenodd{
-	void even() {
-		for(int i=0;i<=100;i++) {
-			if(i%2==0) {
-				System.out.println("even :"+i);
+class FindEvenOdd {
+	void printEven() {
+		for (int i = 0; i <= 100; i++) 
+		{
+			if (i % 2 == 0) 
+			{
+				System.out.println("printEven :" + i);
 			}
 		}
 	}
-	
-	void odd() {
-		for(int i=0;i<=100;i++) {
-			if(i%2!=0) {
-				System.out.println("odd :"+i);
+
+	void printOdd() {
+		for (int i = 0; i <= 100; i++) 
+		{
+			if (i % 2 != 0) 
+			{
+				System.out.println("printOdd :" + i);
 			}
 		}
 	}

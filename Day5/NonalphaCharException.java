@@ -4,42 +4,48 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class NonalphaCharException {
+public class NonAlphaCharException {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CheckException ce = new CheckException();
-		ExecutorService es = Executors.newFixedThreadPool(2);
-		es.execute(() -> {
+		CheckException checkException = new CheckException();
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
+		executorService.execute(() -> {
 			while (true) {
-				ce.check();
+				checkException.checkException();
 			}
 		});
-		es.execute(() -> {
+		executorService.execute(() -> {
 			while (true) {
-				ce.check();
+				checkException.checkException();
 			}
 		});
-		es.shutdown();
+		executorService.shutdown();
 	}
 
 }
 
 class CheckException {
-	synchronized void check() {
+	synchronized void checkException() {
 		try {
-			Scanner sc = new Scanner(System.in);
+			Scanner scanner = new Scanner(System.in);
 			System.out.println(Thread.currentThread().getName() + ": enter a char");
-			char ch = sc.next().charAt(0);
-			if (Character.isLetter(ch)) {
+			char ch = scanner.next().charAt(0);
+			if (Character.isLetter(ch)) 
+			{
 				System.out.println("valid");
-			} else {
-				throw new NonAlphaException("invalid");
+			} 
+			else 
+			{
+				throw new CheckNonAlphaCharException("invalid");
 			}
 			wait();
-		} catch (NonAlphaException nac) {
+		} 
+		catch (CheckNonAlphaCharException nac) 
+		{
 			System.out.println(nac);
-		} catch (InterruptedException e) {
+		} 
+		catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -47,16 +53,17 @@ class CheckException {
 	}
 }
 
-class NonAlphaException extends Exception {
+class CheckNonAlphaCharException extends Exception {
 	String msg;
 
-	public NonAlphaException(String msg) {
+	public CheckNonAlphaCharException(String msg)
+	{
 		// TODO Auto-generated constructor stub
 		this.msg = msg;
 	}
-
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		// TODO Auto-generated method stub
 		return msg;
 	}

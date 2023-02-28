@@ -7,51 +7,57 @@ public class InventoryMultiThread {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ExecutorService es = Executors.newFixedThreadPool(2);
-		Inventory iv = new Inventory();
-		es.execute(() -> {
-			for (int i = 0; i < 3; i++) {
-				iv.add();
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
+		Inventory inventory = new Inventory();
+		executorService.execute(() -> {
+			for (int i = 0; i < 3; i++) 
+			{
+				inventory.produce();
 			}
 		});
-		es.execute(() -> {
-			for (int i = 0; i < 3; i++) {
-				iv.consume();
+		executorService.execute(() -> {
+			for (int i = 0; i < 3; i++) 
+			{
+				inventory.consume();
 			}
 		});
-		es.shutdown();
+		executorService.shutdown();
 	}
 }
 
 class Inventory {
 	int items = 0;
 
-	synchronized void add() {
+	synchronized void produce() {
 		if (items == 1) {
-			try {
+			try 
+			{
 				wait();
-			} catch (Exception e) {
+			} 
+			catch (Exception e) 
+			{
 				System.out.println(e);
 			}
 		}
-
 		System.out.println("Producer added prod");
 		items = 1;
 		notify();
-
 	}
 
 	synchronized void consume() {
-		if (items == 0) {
-			try {
+		if (items == 0) 
+		{
+			try 
+			{
 				wait();
-			} catch (Exception e) {
+			} 
+			catch (Exception e) 
+			{
 				System.out.println(e);
 			}
 		}
 		System.out.println("Consumer consumes prod");
 		items = 0;
 		notify();
-
 	}
 }
