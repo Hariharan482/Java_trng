@@ -1,4 +1,4 @@
-package Day6;
+package Patterns;
 
 import java.util.*;
 
@@ -8,7 +8,6 @@ public class VisitorPattern {
 
 		shapes.add(new Circle(10));
 		shapes.add(new Square(10));
-		shapes.add(new Square(5));
 
 		Area areaVisit = new Area();
 
@@ -20,9 +19,9 @@ public class VisitorPattern {
 	}
 }
 
-interface ShapeVisitor 
-{
+interface ShapeVisitor {
 	void visit(Circle circle);
+
 	void visit(Square square);
 }
 
@@ -71,9 +70,11 @@ class Square implements Shape {
 	public Square(double length) {
 		this.length = length;
 	}
+
 	public double getLength() {
-        return length;
-    }
+		return length;
+	}
+
 	@Override
 	public void accept(ShapeVisitor visitor) {
 		visitor.visit(this);

@@ -1,10 +1,10 @@
-package Day6;
+package Patterns;
 
 public class CommandDemo {
 	public static void main(String[] args) {
 		UniversalRemote remote = new UniversalRemote();
 
-		Tv tv = new Tv();
+		TV tv = new TV();
 		AC ac = new AC();
 		Lights lights = new Lights();
 
@@ -18,20 +18,20 @@ public class CommandDemo {
 }
 
 class UniversalRemote {
-	Command c[] = new Command[4];
+	Command commands[] = new Command[4];
 
 	public UniversalRemote() {
 		for (int i = 0; i < 4; i++) {
-			c[i] = new DummyCommand();
+			commands[i] = new DummyCommand();
 		}
 	}
 
 	public void executeCommand(int slot) {
-		c[slot].execute();
+		commands[slot].execute();
 	}
 
 	public void assignCommand(int slot, Command command) {
-		c[slot] = command;
+		commands[slot] = command;
 	}
 }
 
@@ -46,7 +46,7 @@ class DummyCommand extends Command {
 	}
 }
 
-class Tv extends Command {
+class TV extends Command {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub

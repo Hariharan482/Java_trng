@@ -1,4 +1,4 @@
-package Day6;
+package Patterns;
 
 import java.util.Scanner;
 
@@ -28,16 +28,19 @@ class SelectRestaurant {
 
 abstract class Restaurant {
 	abstract void setDish(FoodType foodType);
+
 	abstract void makeDish();
 }
 
 class Sangeetha extends Restaurant {
 	FoodType foodType;
+
 	@Override
 	void makeDish() {
 		// TODO Auto-generated method stub
 		foodType.prepare();
 	}
+
 	@Override
 	void setDish(FoodType foodType) {
 		// TODO Auto-generated method stub
@@ -47,11 +50,13 @@ class Sangeetha extends Restaurant {
 
 class Aachi extends Restaurant {
 	FoodType foodType;
+
 	@Override
 	void makeDish() {
 		// TODO Auto-generated method stub
 		foodType.prepare();
 	}
+
 	@Override
 	void setDish(FoodType foodType) {
 		// TODO Auto-generated method stub

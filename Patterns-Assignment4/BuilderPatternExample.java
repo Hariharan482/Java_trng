@@ -1,10 +1,11 @@
-package Day6;
+package Patterns;
 
 public class BuilderPatternExample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Customer customer = new Customer.CustomerBuilder().name("Steve").mobileNumber("9876543210").email("Steve@gmail.com").build();
+		Customer customer = new Customer.CustomerBuilder().setName("Steve").setMobileNumber("9876543210")
+				.setEmail("Steve@gmail.com").build();
 		System.out.println(customer);
 
 	}
@@ -33,17 +34,17 @@ class Customer {
 		private String mobileNumber;
 		private String email;
 
-		public CustomerBuilder name(String name) {
+		public CustomerBuilder setName(String name) {
 			this.name = name;
 			return this;
 		}
 
-		public CustomerBuilder mobileNumber(String mobileNumber) {
+		public CustomerBuilder setMobileNumber(String mobileNumber) {
 			this.mobileNumber = mobileNumber;
 			return this;
 		}
 
-		public CustomerBuilder email(String email) {
+		public CustomerBuilder setEmail(String email) {
 			this.email = email;
 			return this;
 		}

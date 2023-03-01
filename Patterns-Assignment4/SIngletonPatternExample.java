@@ -1,4 +1,4 @@
-package Day6;
+package Patterns;
 
 public class SIngletonPatternExample {
 
@@ -15,7 +15,7 @@ public class SIngletonPatternExample {
 }
 
 class LazyInstantiation {
-	private static LazyInstantiation lazyinstantiation;
+	private static LazyInstantiation lazyInstantiation;
 
 	private LazyInstantiation() 
 	{
@@ -24,16 +24,16 @@ class LazyInstantiation {
 
 	public static LazyInstantiation getInstance() 
 	{
-		if (lazyinstantiation == null) 
+		if (lazyInstantiation == null) 
 		{
-			lazyinstantiation = new LazyInstantiation();
+			lazyInstantiation = new LazyInstantiation();
 		}
-		return lazyinstantiation;
+		return lazyInstantiation;
 	}
 }
 
 class EarlyInstantiation{
-	private static EarlyInstantiation earlyinstantiation=new EarlyInstantiation();
+	private static EarlyInstantiation earlyInstantiation=new EarlyInstantiation();
 
 	private EarlyInstantiation() 
 	{
@@ -42,6 +42,6 @@ class EarlyInstantiation{
 
 	public static EarlyInstantiation getInstance() 
 	{
-		return earlyinstantiation;
+		return earlyInstantiation;
 	}
 }

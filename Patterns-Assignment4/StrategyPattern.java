@@ -1,34 +1,35 @@
-package Day6;
+package Patterns;
+
 import java.util.Scanner;
 
 public class StrategyPattern {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc=new Scanner(System.in);
-		String string1=sc.next();
-		try 
-		{
-			Bank bank=new Bank(string1);
-		} 
-		catch (Exception e) 
-		{
+		Scanner scanner = new Scanner(System.in);
+		String string1 = scanner.next();
+		try {
+			Bank bank = new Bank(string1);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 }
-class Bank{
-	String string="Day6.";
-	Bank(String type) throws Exception{
-		AccountType accountType=(AccountType)Class.forName(string.concat(type)).newInstance();
+
+class Bank {
+	String string = "Day6.";
+
+	Bank(String type) throws Exception {
+		AccountType accountType = (AccountType) Class.forName(string.concat(type)).newInstance();
 		accountType.getDetails();
 	}
 }
-abstract class AccountType{
+
+abstract class AccountType {
 	public abstract void getDetails();
 }
 
-class SavingsAccount extends AccountType{
+class SavingsAccount extends AccountType {
 	@Override
 	public void getDetails() {
 		// TODO Auto-generated method stub
@@ -36,7 +37,7 @@ class SavingsAccount extends AccountType{
 	}
 }
 
-class CurrentAccount extends AccountType{
+class CurrentAccount extends AccountType {
 	@Override
 	public void getDetails() {
 		// TODO Auto-generated method stub
@@ -44,7 +45,7 @@ class CurrentAccount extends AccountType{
 	}
 }
 
-class SalaryAccount extends AccountType{
+class SalaryAccount extends AccountType {
 	@Override
 	public void getDetails() {
 		// TODO Auto-generated method stub
