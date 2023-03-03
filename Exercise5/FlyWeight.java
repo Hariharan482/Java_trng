@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class FlyWeight {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Factory factory=new Factory();
 		Scanner scanner=new Scanner(System.in);
 		String name=scanner.next();
