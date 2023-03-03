@@ -3,7 +3,7 @@ package Assignment5;
 public abstract class BridgePattern {
 
 	public static void main(String[] args)  {
-		// TODO Auto-generated method stub
+		
 		Message media=new Media(new Email());
 		media.sendMessage();
 	}
@@ -16,12 +16,12 @@ abstract class Message{
 
 class Textmessage extends Message{
 	public Textmessage(MessageSender sender) {
-		// TODO Auto-generated constructor stub
+		
 		this.sender=sender;
 	}
 	@Override
 	void sendMessage() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("text message");
 		sender.send();
 	}
@@ -30,12 +30,12 @@ class Textmessage extends Message{
 
 class Media extends Message{
 	public Media(MessageSender sender) {
-		// TODO Auto-generated constructor stub
+		
 		this.sender=sender;
 	}
 	@Override
 	void sendMessage() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("media message");
 		sender.send();
 	}
@@ -50,7 +50,7 @@ class Email implements MessageSender{
 
 	@Override
 	public void send() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("sent via email");
 	}
 	
@@ -60,7 +60,7 @@ class SMS implements MessageSender{
 
 	@Override
 	public void send() {
-		// TODO Auto-generated method stub
+		
 		System.out.println("sent via SMS");
 	}
 	
