@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MementoPattern {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Scanner scanner =new Scanner(System.in);
 		ActualClass actualClass=new ActualClass();
 		
@@ -47,7 +47,7 @@ class Backup{
 	String name;
 	
 	public Backup() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	void updateBackup(int id,String name) {
