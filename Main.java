@@ -10,14 +10,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("enter expected departure date & time in format - (dd/mm/yyyy HH:MM:ss)");
-		String date = sc.nextLine();
+		String date = scanner.nextLine();
 		System.out.println("Speed nd dist to be travelled :");
-		double speed = sc.nextDouble();
-		double dist = sc.nextDouble();
+		double speed = scanner.nextDouble();
+		double dist = scanner.nextDouble();
 		Fact.check(date, speed, dist);
-		sc.close();
+		scanner.close();
 	}
 
 }
@@ -25,9 +25,9 @@ public class Main {
 class Fact {
 	static void check(String date, double speed, double dist) {
 		
-		LocalDateTime ldt = setDate.set(date);
-		CalcTime ct = new CalcTime(speed, dist,ldt);
-		ldt = CheckHoliday.checkHolidays(ldt);
+		LocalDateTime localDateTime = setDate.set(date);
+		CalcTime ct = new CalcTime(speed, dist,localDateTime);
+		localDateTime = CheckHoliday.checkHolidays(localDateTime);
 		System.out.println(ct.get());
 		
 	}
@@ -36,13 +36,13 @@ class Fact {
 class CalcTime {
 	private double dist;
 	private double speed;
-	private LocalDateTime ldt;
+	private LocalDateTime localDateTime;
 	
 
-	CalcTime(double speed, double dist,LocalDateTime ldt) {
+	CalcTime(double speed, double dist,LocalDateTime localDateTime) {
 		this.speed = speed;
 		this.dist = dist;
-		this.ldt=ldt;
+		this.localDateTime=localDateTime;
 		calcHrs();
 	}
 
@@ -51,62 +51,62 @@ class CalcTime {
 		long remTime=0;
 		int daysCount=0;
 		LocalTime reset ;
-		long totalmins=(long) ((dist/speed)*60);
+		long totalMins=(long) ((dist/speed)*60);
 
 		LocalTime FinalTime = LocalTime.of(23, 59, 59);
-		Duration between = Duration.between(ldt.toLocalTime(), FinalTime);
+		Duration between = Duration.between(localDateTime.toLocalTime(), FinalTime);
 		//System.out.println(between.toMinutes());
-		long l=between.toMinutes();
+		long betweenMins=between.toMinutes();
 		
 		int dayTime=480;
 		
-		if(totalmins<=dayTime) {
-			if(l>=totalmins) {
-				remTime=totalmins;
-				totalmins=0;
-				reset = ldt.toLocalTime();
+		if(totalMins<=dayTime) {
+			if(betweenMins>=totalMins) {
+				remTime=totalMins;
+				totalMins=0;
+				reset = localDateTime.toLocalTime();
 			}
 			else {
-				totalmins-=l;
+				totalMins-=betweenMins;
 				reset = LocalTime.of(0,0,0);
 				daysCount++;
 			}
 		}
 		else {
-			if(l<=dayTime) {
-				totalmins-=remTime;
+			if(betweenMins<=dayTime) {
+				totalMins-=remTime;
 				reset = LocalTime.of(0,0,0);
 				daysCount++;
 			}
 			else {
-				totalmins-=dayTime;
+				totalMins-=dayTime;
 				reset = LocalTime.of(0,0,0);
 				daysCount++;
 			}
 		}
 		
-		while(totalmins>0){
-            if(totalmins>dayTime)
+		while(totalMins>0){
+            if(totalMins>dayTime)
             {
-                totalmins-=dayTime;
+                totalMins-=dayTime;
                 daysCount++;
             }
             else
             {
-                remTime = totalmins;
-                totalmins-=totalmins;
+                remTime = totalMins;
+                totalMins-=totalMins;
             }
            }
 		while(daysCount>0) {
-			ldt=CheckHoliday.checkHolidays(ldt);
-			ldt=ldt.plusDays(1);
+			localDateTime=CheckHoliday.checkHolidays(localDateTime);
+			localDateTime=localDateTime.plusDays(1);
 			daysCount--;
 		}
-		ldt=ldt.plusMinutes(remTime);
+		localDateTime=localDateTime.plusMinutes(remTime);
 	}
 	
 	LocalDateTime  get(){
-		return ldt;
+		return localDateTime;
 	}
 }
 
@@ -115,37 +115,39 @@ class setDate {
 	static LocalDateTime set(String date) {
 		if (date.equals("now"))
 			return LocalDateTime.now();
-		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-		LocalDateTime d = LocalDateTime.parse(date, df);
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		LocalDateTime localDateTime = LocalDateTime.parse(date, dateTimeFormatter);
 
-		//System.out.println(d);
-		return d;
+		//System.out.println(localDateTime);
+		return localDateTime;
 	}
 }
 
 class CheckHoliday {
 
-	static LocalDateTime checkHolidays(LocalDateTime d) {
-		int day = d.getDayOfMonth();
-		int month = d.getMonthValue();
+	static LocalDateTime checkHolidays(LocalDateTime localDateTime) {
+		final String sunday="SUNDAY";
+		final String saturday="SATURDAY";
+		int day = localDateTime.getDayOfMonth();
+		int month = localDateTime.getMonthValue();
 
-		if (d.getDayOfWeek().toString() == "SUNDAY") {
-			d = d.plusDays(1);
-			return d;
+		if (localDateTime.getDayOfWeek().toString().equals(sunday)) {
+			localDateTime = localDateTime.plusDays(1);
+			return localDateTime;
 		}
-		if (day <= 15 && day > 7 && d.getDayOfWeek().toString() == "SATURDAY") {
-			d = d.plusDays(1);
-			return d;
+		if (day <= 15 && day > 7 && localDateTime.getDayOfWeek().toString().equals(saturday)) {
+			localDateTime = localDateTime.plusDays(1);
+			return localDateTime;
 		}
 		if (day == 15 && month == 8) {
-			d = d.plusDays(1);
-			return d;
+			localDateTime = localDateTime.plusDays(1);
+			return localDateTime;
 		}
 		if (day == 26 && month == 1) {
-			d = d.plusDays(1);
-			return d;
+			localDateTime = localDateTime.plusDays(1);
+			return localDateTime;
 		}
 
-		return d;
+		return localDateTime;
 	}
 }
