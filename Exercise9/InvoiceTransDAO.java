@@ -62,7 +62,7 @@ public class InvoiceTransDAO {
 			ps.setInt(1, itemid);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				ps = con.prepareStatement("update invoice_trans set Invoiceno=?,itemno=?,itemqty=?");
+				ps = con.prepareStatement("update invoice_trans set invoiceno=?,itemno=?,itemqty=?");
 				ps.setInt(1, dto.getInvoiceno());
 				ps.setInt(2, dto.getItemno());
 				ps.setInt(3, dto.getItemqty());
@@ -84,7 +84,7 @@ public class InvoiceTransDAO {
 		try {
 			Connection con = DBUtility.getConnection();
 			int invoiceno = dto.getInvoiceno();
-			PreparedStatement ps = con.prepareStatement("delete from invoice_trans where Invoiceno=?");
+			PreparedStatement ps = con.prepareStatement("delete from invoice_trans where invoiceno=?");
 			ps.setInt(1, invoiceno);
 			int n = ps.executeUpdate();
 			DBUtility.closeConnection(null);

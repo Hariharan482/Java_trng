@@ -64,7 +64,7 @@ public class InvoiceMasterDAO {
 			ps.setInt(1, itemid);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				ps = con.prepareStatement("update invoice_master set getInvoiceno=?,invoicedate=?,customerId=?");
+				ps = con.prepareStatement("update invoice_master set invoiceno=?,invoicedate=?,customerid=?");
 				ps.setInt(1, dto.getInvoiceno());
 				ps.setString(2, dto.getInvoicedate());
 				ps.setInt(3, dto.getCustomerid());
@@ -86,7 +86,7 @@ public class InvoiceMasterDAO {
 		try {
 			Connection con = DBUtility.getConnection();
 			int invoiceno = dto.getInvoiceno();
-			PreparedStatement ps = con.prepareStatement("delete from invoice_master where Invoiceno=?");
+			PreparedStatement ps = con.prepareStatement("delete from invoice_master where invoiceno=?");
 			ps.setInt(1, invoiceno);
 			int n = ps.executeUpdate();
 			DBUtility.closeConnection(null);
